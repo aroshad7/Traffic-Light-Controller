@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Synchronizer.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Synchronizer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Synchronizer.ngc Synchronizer.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Synchronizer_map.ncd Synchronizer.ngd Synchronizer.pcf 
+par -w -intstyle ise -ol high -t 1 Synchronizer_map.ncd Synchronizer.ncd Synchronizer.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Synchronizer.twx Synchronizer.ncd -o Synchronizer.twr Synchronizer.pcf 

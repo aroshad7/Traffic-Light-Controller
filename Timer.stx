@@ -1,0 +1,31 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.83 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.83 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Timer.v" in library work
+ERROR:HDLCompilers:208 - "Timer.v" line 21 Port reference 'devider_reset' was not declared as input, inout or output
+Module <Timer> compiled
+Analysis of file <"Timer.prj"> failed.
+--> 
+
+Total memory usage is 266908 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

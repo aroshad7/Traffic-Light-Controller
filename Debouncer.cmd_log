@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Debouncer.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Debouncer.syr" 

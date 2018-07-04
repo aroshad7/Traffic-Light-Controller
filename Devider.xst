@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/xst"
+elaborate
+-ifn Devider.prj
+-ifmt mixed
