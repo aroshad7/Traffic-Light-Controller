@@ -18,9 +18,8 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Lights(light_signals, Rm, Ym, Gm, Rs, Ys, Gs, W, clk);
+module Lights(light_signals, Rm, Ym, Gm, Rs, Ys, Gs, W);
 	 input[6:0] light_signals;
-    input clk;
     output Rm, Ym, Gm, Rs, Ys, Gs, W;
 	 
     reg Rm, Ym, Gm, Rs, Ys, Gs, W;

@@ -78,8 +78,7 @@ module TrafficController(reset, clk, sensor, walkRequest, reprogram, extTimeSele
 	Lights lights(.light_signals(light_signals),
 						.Rm(Rm), .Ym(Ym), .Gm(Gm),
 						.Rs(Rs), .Ys(Ys), .Gs(Gs),
-						.W(W),
-						.clk(clk));
+						.W(W));
 						
 	FSM fsm(.sensor_sync_in(sensor_sync),
 			.walkRegister_status(WR),

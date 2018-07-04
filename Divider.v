@@ -24,13 +24,13 @@ module Divider(enable_output, clk, devider_reset);
     input clk, devider_reset;
 	 
 	 reg enable_output;
-	 reg sys_tick_count;
-	 parameter one_second_count = 25'd26_999_999;
+	 reg[24:0] sys_tick_count = 25'd0;
+	 parameter one_second_count = /*25'd26_999_999*/ 25'd3;
 	 
 	 always @ (posedge clk)
 		begin
 			
-			enable_output <= 0;				//Check if this should be <= or =
+			enable_output = 0;				//Check if this should be <= or =
 			
 			if(sys_tick_count == one_second_count || devider_reset == 1)
 				sys_tick_count <= 25'd0;
@@ -38,7 +38,7 @@ module Divider(enable_output, clk, devider_reset);
 				sys_tick_count <= sys_tick_count + 1;
 				
 			if(sys_tick_count == one_second_count)
-				enable_output <= 1;
+				enable_output = 1;
 				
 		end
 	 

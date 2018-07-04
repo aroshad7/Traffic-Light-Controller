@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.33 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.33 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: TrafficController.prj
 
@@ -152,7 +152,7 @@ Analyzing hierarchy for module <TimeParameters> in library <work> with parameter
 Analyzing hierarchy for module <Timer> in library <work>.
 
 Analyzing hierarchy for module <Divider> in library <work> with parameters.
-	one_second_count = "1100110111111110010111111"
+	one_second_count = "0000000000000000000000011"
 
 Analyzing hierarchy for module <Lights> in library <work>.
 
@@ -215,7 +215,7 @@ Analyzing module <Timer> in library <work>.
 Module <Timer> is correct for synthesis.
  
 Analyzing module <Divider> in library <work>.
-	one_second_count = 25'b1100110111111110010111111
+	one_second_count = 25'b0000000000000000000000011
 Module <Divider> is correct for synthesis.
  
 Analyzing module <Lights> in library <work>.
@@ -268,27 +268,27 @@ Unit <TimeParameters> synthesized.
 
 Synthesizing Unit <Timer>.
     Related source file is "Timer.v".
-WARNING:Xst:647 - Input <input_value<3:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <expired>.
     Found 1-bit register for signal <divider_reset>.
-    Found T flip-flop for signal <remaining_time>.
+    Found 4-bit down counter for signal <remaining_time>.
     Summary:
-	inferred   1 T-type flip-flop(s).
+	inferred   1 Counter(s).
 	inferred   2 D-type flip-flop(s).
 Unit <Timer> synthesized.
 
 
 Synthesizing Unit <Divider>.
     Related source file is "Divider.v".
-    Found T flip-flop for signal <sys_tick_count>.
+    Found 1-bit register for signal <enable_output>.
+    Found 25-bit up counter for signal <sys_tick_count>.
     Summary:
-	inferred   1 T-type flip-flop(s).
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
 Unit <Divider> synthesized.
 
 
 Synthesizing Unit <Lights>.
     Related source file is "Lights.v".
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 Unit <Lights> synthesized.
 
 
@@ -346,15 +346,15 @@ Unit <TrafficController> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 3
+# Counters                                             : 5
  19-bit up counter                                     : 3
-# Registers                                            : 26
- 1-bit register                                        : 19
+ 25-bit up counter                                     : 1
+ 4-bit down counter                                    : 1
+# Registers                                            : 27
+ 1-bit register                                        : 20
  3-bit register                                        : 2
  4-bit register                                        : 4
  7-bit register                                        : 1
-# Toggle Registers                                     : 1
- T flip-flop                                           : 1
 # Multiplexers                                         : 4
  4-bit 4-to-1 multiplexer                              : 4
 # Xors                                                 : 3
@@ -368,13 +368,8 @@ Macro Statistics
 
 WARNING:Xst:1290 - Hierarchical block <reset_debouncer> is unconnected in block <debouncer>.
    It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <divider> is unconnected in block <TrafficController>.
-   It will be removed from the design.
 WARNING:Xst:1710 - FF/Latch <sync_0> (without init value) has a constant value of 0 in block <reset_synchronizer>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out> (without init value) has a constant value of 0 in block <reset_synchronizer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <output_value_1> of sequential type is unconnected in block <timeParameters>.
-WARNING:Xst:2677 - Node <output_value_2> of sequential type is unconnected in block <timeParameters>.
-WARNING:Xst:2677 - Node <output_value_3> of sequential type is unconnected in block <timeParameters>.
 WARNING:Xst:2677 - Node <interval_address_0> of sequential type is unconnected in block <fsm>.
 WARNING:Xst:2677 - Node <light_signals_1> of sequential type is unconnected in block <fsm>.
 WARNING:Xst:2677 - Node <light_signals_2> of sequential type is unconnected in block <fsm>.
@@ -387,8 +382,10 @@ WARNING:Xst:2677 - Node <light_signals_6> of sequential type is unconnected in b
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 3
+# Counters                                             : 5
  19-bit up counter                                     : 3
+ 25-bit up counter                                     : 1
+ 4-bit down counter                                    : 1
 # Registers                                            : 49
  Flip-Flops                                            : 49
 # Multiplexers                                         : 4
@@ -404,27 +401,16 @@ Macro Statistics
 WARNING:Xst:1710 - FF/Latch <interval_address_0> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <synchronizer/reset_synchronizer/sync_0> (without init value) has a constant value of 0 in block <TrafficController>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <synchronizer/reset_synchronizer/out> (without init value) has a constant value of 0 in block <TrafficController>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <timer/divider_reset> of sequential type is unconnected in block <TrafficController>.
 
 Optimizing unit <TrafficController> ...
 
 Optimizing unit <TimeParameters> ...
 
+Optimizing unit <Timer> ...
+
 Optimizing unit <FSM> ...
 
 Optimizing unit <debouncer_core> ...
-WARNING:Xst:2677 - Node <timeParameters/output_value_3> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/output_value_2> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/output_value_1> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/YELL_VALUE_3> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/YELL_VALUE_2> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/YELL_VALUE_1> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/EXTD_VALUE_3> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/EXTD_VALUE_2> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/EXTD_VALUE_1> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/BASE_VALUE_3> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/BASE_VALUE_2> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <timeParameters/BASE_VALUE_1> of sequential type is unconnected in block <TrafficController>.
 WARNING:Xst:2677 - Node <fsm/light_signals_6> of sequential type is unconnected in block <TrafficController>.
 WARNING:Xst:2677 - Node <fsm/light_signals_5> of sequential type is unconnected in block <TrafficController>.
 WARNING:Xst:2677 - Node <fsm/light_signals_4> of sequential type is unconnected in block <TrafficController>.
@@ -455,7 +441,7 @@ WARNING:Xst:2677 - Node <debouncer/reset_debouncer/new> of sequential type is un
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TrafficController, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block TrafficController, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -469,8 +455,8 @@ Unit <TrafficController> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 57
- Flip-Flops                                            : 57
+# Registers                                            : 99
+ Flip-Flops                                            : 99
 # Shift Registers                                      : 3
  2-bit shift register                                  : 3
 
@@ -501,25 +487,24 @@ Design Statistics
 # IOs                              : 18
 
 Cell Usage :
-# BELS                             : 162
+# BELS                             : 277
 #      GND                         : 1
-#      INV                         : 6
-#      LUT1                        : 36
-#      LUT2                        : 4
-#      LUT3                        : 12
-#      LUT3_L                      : 1
-#      LUT4                        : 15
-#      MUXCY                       : 46
+#      INV                         : 9
+#      LUT1                        : 60
+#      LUT2                        : 8
+#      LUT3                        : 17
+#      LUT4                        : 39
+#      MUXCY                       : 77
 #      MUXF5                       : 2
 #      VCC                         : 1
-#      XORCY                       : 38
-# FlipFlops/Latches                : 60
+#      XORCY                       : 63
+# FlipFlops/Latches                : 102
 #      FD                          : 3
-#      FDE                         : 6
-#      FDR                         : 2
-#      FDRE                        : 47
-#      FDS                         : 1
-#      FDSE                        : 1
+#      FDE                         : 9
+#      FDR                         : 28
+#      FDRE                        : 55
+#      FDS                         : 2
+#      FDSE                        : 5
 # Shift Registers                  : 3
 #      SRL16                       : 3
 # Clock Buffers                    : 1
@@ -534,10 +519,10 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                       40  out of   4656     0%  
- Number of Slice Flip Flops:             60  out of   9312     0%  
- Number of 4 input LUTs:                 77  out of   9312     0%  
-    Number used as logic:                74
+ Number of Slices:                       71  out of   4656     1%  
+ Number of Slice Flip Flops:            102  out of   9312     1%  
+ Number of 4 input LUTs:                136  out of   9312     1%  
+    Number used as logic:               133
     Number used as Shift registers:       3
  Number of IOs:                          18
  Number of bonded IOBs:                  17  out of    232     7%  
@@ -564,7 +549,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 63    |
+clk                                | BUFGP                  | 105   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -575,7 +560,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 5.808ns (Maximum Frequency: 172.176MHz)
+   Minimum period: 6.477ns (Maximum Frequency: 154.392MHz)
    Minimum input arrival time before clock: 4.545ns
    Maximum output required time after clock: 4.283ns
    Maximum combinational path delay: No path found
@@ -586,35 +571,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.808ns (frequency: 172.176MHz)
-  Total number of paths / destination ports: 1257 / 158
+  Clock period: 6.477ns (frequency: 154.392MHz)
+  Total number of paths / destination ports: 2324 / 241
 -------------------------------------------------------------------------
-Delay:               5.808ns (Levels of Logic = 7)
-  Source:            debouncer/walkRequest_debouncer/count_7 (FF)
-  Destination:       debouncer/walkRequest_debouncer/count_18 (FF)
+Delay:               6.477ns (Levels of Logic = 8)
+  Source:            divider/sys_tick_count_9 (FF)
+  Destination:       divider/sys_tick_count_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: debouncer/walkRequest_debouncer/count_7 to debouncer/walkRequest_debouncer/count_18
+  Data Path: divider/sys_tick_count_9 to divider/sys_tick_count_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             2   0.591   0.622  debouncer/walkRequest_debouncer/count_7 (debouncer/walkRequest_debouncer/count_7)
-     LUT3:I0->O            1   0.704   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_lut<0> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_lut<0>)
-     MUXCY:S->O            1   0.464   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<0> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<0>)
-     MUXCY:CI->O           1   0.059   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<1> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<1>)
-     MUXCY:CI->O           1   0.059   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<2> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<2>)
-     MUXCY:CI->O           1   0.059   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<3> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<3>)
-     MUXCY:CI->O           2   0.459   0.447  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<4> (debouncer/walkRequest_debouncer/count_cmp_eq0000)
-     INV:I->O             19   0.704   1.085  debouncer/walkRequest_debouncer/count_not00011_INV_0 (debouncer/walkRequest_debouncer/count_not0001)
-     FDRE:CE                   0.555          debouncer/walkRequest_debouncer/count_0
+     FDR:C->Q              2   0.591   0.622  divider/sys_tick_count_9 (divider/sys_tick_count_9)
+     LUT4:I0->O            1   0.704   0.000  divider/enable_output_cmp_eq0000_wg_lut<1> (divider/enable_output_cmp_eq0000_wg_lut<1>)
+     MUXCY:S->O            1   0.464   0.000  divider/enable_output_cmp_eq0000_wg_cy<1> (divider/enable_output_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  divider/enable_output_cmp_eq0000_wg_cy<2> (divider/enable_output_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  divider/enable_output_cmp_eq0000_wg_cy<3> (divider/enable_output_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  divider/enable_output_cmp_eq0000_wg_cy<4> (divider/enable_output_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  divider/enable_output_cmp_eq0000_wg_cy<5> (divider/enable_output_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O           2   0.459   0.526  divider/enable_output_cmp_eq0000_wg_cy<6> (divider/enable_output_cmp_eq0000)
+     LUT2:I1->O           25   0.704   1.260  divider/sys_tick_count_or00001 (divider/sys_tick_count_or0000)
+     FDR:R                     0.911          divider/sys_tick_count_0
     ----------------------------------------
-    Total                      5.808ns (3.654ns logic, 2.154ns route)
-                                       (62.9% logic, 37.1% route)
+    Total                      6.477ns (4.069ns logic, 2.408ns route)
+                                       (62.8% logic, 37.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 57 / 48
+  Total number of paths / destination ports: 96 / 57
 -------------------------------------------------------------------------
 Offset:              4.545ns (Levels of Logic = 2)
   Source:            walkRequest (PAD)
@@ -655,13 +641,13 @@ Offset:              4.283ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.10 secs
+Total CPU time to Xst completion: 5.53 secs
  
 --> 
 
-Total memory usage is 296768 kilobytes
+Total memory usage is 297792 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   67 (   0 filtered)
+Number of warnings :   48 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

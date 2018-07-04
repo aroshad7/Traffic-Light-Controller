@@ -26,7 +26,6 @@ module TestLights;
 
 	// Inputs
 	reg [6:0] light_signals;
-	reg clk;
 
 	// Outputs
 	wire Rm;
@@ -46,17 +45,12 @@ module TestLights;
 		.Rs(Rs), 
 		.Ys(Ys), 
 		.Gs(Gs), 
-		.W(W), 
-		.clk(clk));
+		.W(W));
 
-	initial begin
-		forever #10 clk = ~clk;
-	end
 
 	initial begin
 		// Initialize Inputs
 		light_signals = 0;
-		clk = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;

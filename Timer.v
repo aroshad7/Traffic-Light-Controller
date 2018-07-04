@@ -25,7 +25,7 @@ module Timer(input_value, enable, start_timer, expired, divider_reset, clk, sys_
 	output expired, divider_reset;
 	
 	reg expired, divider_reset;
-	reg remaining_time;
+	reg[3:0] remaining_time;
 	
 	always @ (posedge clk)
 		begin
