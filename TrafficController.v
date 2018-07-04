@@ -25,10 +25,10 @@ module TrafficController(reset, clk, sensor, walkRequest, reprogram, extTimeSele
    input [3:0] extTimeValue;
    output Rm, Ym, Gm, Rs, Ys, Gs, W;
 
-	reg Rm, Ym, Gm, Rs, Ys, Gs, W;
+	//reg Rm, Ym, Gm, Rs, Ys, Gs, W;
 
 	wire reset_db_out, walkRequest_db_out, reprogram_db_out, sys_reset, sensor_sync, WR_sync,
-			prog_sync, WR, WR_reset, one_hz_enable, divider_reset, start_timer, expired;
+			prog_sync, WR, WR_reset, one_hz_enable, divider_reset, start_timer, expired, light_signals;
 	wire[1:0] interval;
 	wire[3:0] time_value;
 	
@@ -75,4 +75,22 @@ module TrafficController(reset, clk, sensor, walkRequest, reprogram, extTimeSele
 					
 	Divider divider(.enable_output(one_hz_enable), .clk(clk), .devider_reset(divider_reset));
 	
+	Lights lights(.light_signals(light_signals),
+						.Rm(Rm), .Ym(Ym), .Gm(Gm),
+						.Rs(Rs), .Ys(Ys), .Gs(Gs),
+						.W(W),
+						.clk(clk));
+						
+	FSM fsm(.sensor_sync_in(sensor_sync),
+			.walkRegister_status(WR),
+			.prg_sync_in(prog_sync),
+			.expired(expired),
+			.walkRegister_reset(WR_reset),
+			.interval_address(interval),
+			.start_timer(start_timer),
+			.light_signals(light_signals),
+			.clk(clk),
+			.sys_reset(sys_reset));
+			
+			
 endmodule

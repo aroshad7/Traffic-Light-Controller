@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.33 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.33 secs
  
 --> Reading design: TrafficController.prj
 
@@ -109,10 +109,20 @@ Compiling verilog file "debouncer_core.v" in library work
 Module <synchronizer_core> compiled
 Compiling verilog file "WalkRegister.v" in library work
 Module <debouncer_core> compiled
-Compiling verilog file "Synchronizer.v" in library work
+Compiling verilog file "Timer.v" in library work
 Module <WalkRegister> compiled
-Compiling verilog file "Debouncer.v" in library work
+Compiling verilog file "TimeParameters.v" in library work
+Module <Timer> compiled
+Compiling verilog file "Synchronizer.v" in library work
+Module <TimeParameters> compiled
+Compiling verilog file "Lights.v" in library work
 Module <Synchronizer> compiled
+Compiling verilog file "FSM.v" in library work
+Module <Lights> compiled
+Compiling verilog file "Divider.v" in library work
+Module <FSM> compiled
+Compiling verilog file "Debouncer.v" in library work
+Module <Divider> compiled
 Compiling verilog file "TrafficController.v" in library work
 Module <Debouncer> compiled
 Module <TrafficController> compiled
@@ -130,6 +140,34 @@ Analyzing hierarchy for module <Debouncer> in library <work>.
 Analyzing hierarchy for module <Synchronizer> in library <work>.
 
 Analyzing hierarchy for module <WalkRegister> in library <work>.
+
+Analyzing hierarchy for module <TimeParameters> in library <work> with parameters.
+	BASE_ADD = "00"
+	BASE_DEFAULT = "0110"
+	EXTD_ADD = "01"
+	EXTD_DEFAULT = "0011"
+	YELL_ADD = "10"
+	YELL_DEFAULT = "0010"
+
+Analyzing hierarchy for module <Timer> in library <work>.
+
+Analyzing hierarchy for module <Divider> in library <work> with parameters.
+	one_second_count = "1100110111111110010111111"
+
+Analyzing hierarchy for module <Lights> in library <work>.
+
+Analyzing hierarchy for module <FSM> in library <work> with parameters.
+	BASE_ADD = "00"
+	CONT_MAIN_GREEN_NO_TRAFFIC = "00000000000000000000000000000001"
+	CONT_MAIN_GREEN_TRAFFIC = "00000000000000000000000000000010"
+	CONT_SIDE_GREEN_TRAFFIC = "00000000000000000000000000000110"
+	EXT_ADD = "01"
+	MAIN_YELLOW = "00000000000000000000000000000011"
+	PEDESTRIAN_WALK = "00000000000000000000000000000100"
+	SIDE_YELLOW = "00000000000000000000000000000111"
+	START_MAIN_GREEN = "00000000000000000000000000000000"
+	START_SIDE_GREEN = "00000000000000000000000000000101"
+	YEL_ADD = "10"
 
 Analyzing hierarchy for module <debouncer_core> in library <work> with parameters.
 	DELAY = "00000000000001000001111010110000"
@@ -161,6 +199,42 @@ Module <synchronizer_core> is correct for synthesis.
 Analyzing module <WalkRegister> in library <work>.
 Module <WalkRegister> is correct for synthesis.
  
+Analyzing module <TimeParameters> in library <work>.
+	BASE_ADD = 2'b00
+	BASE_DEFAULT = 4'b0110
+	EXTD_ADD = 2'b01
+	EXTD_DEFAULT = 4'b0011
+	YELL_ADD = 2'b10
+	YELL_DEFAULT = 4'b0010
+WARNING:Xst:1465 - "TimeParameters.v" line 58: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "TimeParameters.v" line 59: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+WARNING:Xst:1465 - "TimeParameters.v" line 60: Exactly not equal expression will be synthesized as a not equal expression, simulation mismatch is possible. 
+Module <TimeParameters> is correct for synthesis.
+ 
+Analyzing module <Timer> in library <work>.
+Module <Timer> is correct for synthesis.
+ 
+Analyzing module <Divider> in library <work>.
+	one_second_count = 25'b1100110111111110010111111
+Module <Divider> is correct for synthesis.
+ 
+Analyzing module <Lights> in library <work>.
+Module <Lights> is correct for synthesis.
+ 
+Analyzing module <FSM> in library <work>.
+	BASE_ADD = 2'b00
+	CONT_MAIN_GREEN_NO_TRAFFIC = 32'sb00000000000000000000000000000001
+	CONT_MAIN_GREEN_TRAFFIC = 32'sb00000000000000000000000000000010
+	CONT_SIDE_GREEN_TRAFFIC = 32'sb00000000000000000000000000000110
+	EXT_ADD = 2'b01
+	MAIN_YELLOW = 32'sb00000000000000000000000000000011
+	PEDESTRIAN_WALK = 32'sb00000000000000000000000000000100
+	SIDE_YELLOW = 32'sb00000000000000000000000000000111
+	START_MAIN_GREEN = 32'sb00000000000000000000000000000000
+	START_SIDE_GREEN = 32'sb00000000000000000000000000000101
+	YEL_ADD = 2'b10
+Module <FSM> is correct for synthesis.
+ 
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -174,6 +248,60 @@ Synthesizing Unit <WalkRegister>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <WalkRegister> synthesized.
+
+
+Synthesizing Unit <TimeParameters>.
+    Related source file is "TimeParameters.v".
+    Found 4-bit register for signal <output_value>.
+    Found 4-bit register for signal <BASE_VALUE>.
+    Found 4-bit 4-to-1 multiplexer for signal <BASE_VALUE$mux0000> created at line 56.
+    Found 4-bit register for signal <EXTD_VALUE>.
+    Found 4-bit 4-to-1 multiplexer for signal <EXTD_VALUE$mux0000> created at line 56.
+    Found 4-bit 4-to-1 multiplexer for signal <output_value$mux0000> created at line 75.
+    Found 4-bit register for signal <YELL_VALUE>.
+    Found 4-bit 4-to-1 multiplexer for signal <YELL_VALUE$mux0000> created at line 56.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred  16 Multiplexer(s).
+Unit <TimeParameters> synthesized.
+
+
+Synthesizing Unit <Timer>.
+    Related source file is "Timer.v".
+WARNING:Xst:647 - Input <input_value<3:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <expired>.
+    Found 1-bit register for signal <divider_reset>.
+    Found T flip-flop for signal <remaining_time>.
+    Summary:
+	inferred   1 T-type flip-flop(s).
+	inferred   2 D-type flip-flop(s).
+Unit <Timer> synthesized.
+
+
+Synthesizing Unit <Divider>.
+    Related source file is "Divider.v".
+    Found T flip-flop for signal <sys_tick_count>.
+    Summary:
+	inferred   1 T-type flip-flop(s).
+Unit <Divider> synthesized.
+
+
+Synthesizing Unit <Lights>.
+    Related source file is "Lights.v".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+Unit <Lights> synthesized.
+
+
+Synthesizing Unit <FSM>.
+    Related source file is "FSM.v".
+    Found 7-bit register for signal <light_signals>.
+    Found 1-bit register for signal <start_timer>.
+    Found 3-bit register for signal <interval_address>.
+    Found 1-bit register for signal <walkRegister_reset>.
+    Found 3-bit register for signal <state>.
+    Summary:
+	inferred  15 D-type flip-flop(s).
+Unit <FSM> synthesized.
 
 
 Synthesizing Unit <debouncer_core>.
@@ -211,29 +339,8 @@ Unit <Synchronizer> synthesized.
 
 Synthesizing Unit <TrafficController>.
     Related source file is "TrafficController.v".
-WARNING:Xst:1306 - Output <Gm> is never assigned.
-WARNING:Xst:1306 - Output <Gs> is never assigned.
-WARNING:Xst:1306 - Output <W> is never assigned.
-WARNING:Xst:1306 - Output <Rm> is never assigned.
-WARNING:Xst:1306 - Output <Rs> is never assigned.
-WARNING:Xst:647 - Input <timeSelector> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1306 - Output <Ym> is never assigned.
-WARNING:Xst:1306 - Output <Ys> is never assigned.
-WARNING:Xst:647 - Input <timeValue> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1780 - Signal <time_value> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <start_timer> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <sensor_sync> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <prog_sync> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <one_hz_enable> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <interval> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <expired> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <divider_reset> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <WR_reset> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:646 - Signal <WR> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <TrafficController> synthesized.
 
-WARNING:Xst:524 - All outputs of the instance <walkRegister> of the block <WalkRegister> are unconnected in block <TrafficController>.
-   This instance will be removed from the design along with all underlying logic
 
 =========================================================================
 HDL Synthesis Report
@@ -241,8 +348,15 @@ HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 3
  19-bit up counter                                     : 3
-# Registers                                            : 14
- 1-bit register                                        : 14
+# Registers                                            : 26
+ 1-bit register                                        : 19
+ 3-bit register                                        : 2
+ 4-bit register                                        : 4
+ 7-bit register                                        : 1
+# Toggle Registers                                     : 1
+ T flip-flop                                           : 1
+# Multiplexers                                         : 4
+ 4-bit 4-to-1 multiplexer                              : 4
 # Xors                                                 : 3
  1-bit xor2                                            : 3
 
@@ -252,10 +366,22 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1290 - Hierarchical block <debouncer> is unconnected in block <TrafficController>.
+WARNING:Xst:1290 - Hierarchical block <reset_debouncer> is unconnected in block <debouncer>.
    It will be removed from the design.
-WARNING:Xst:1290 - Hierarchical block <synchronizer> is unconnected in block <TrafficController>.
+WARNING:Xst:1290 - Hierarchical block <divider> is unconnected in block <TrafficController>.
    It will be removed from the design.
+WARNING:Xst:1710 - FF/Latch <sync_0> (without init value) has a constant value of 0 in block <reset_synchronizer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out> (without init value) has a constant value of 0 in block <reset_synchronizer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <output_value_1> of sequential type is unconnected in block <timeParameters>.
+WARNING:Xst:2677 - Node <output_value_2> of sequential type is unconnected in block <timeParameters>.
+WARNING:Xst:2677 - Node <output_value_3> of sequential type is unconnected in block <timeParameters>.
+WARNING:Xst:2677 - Node <interval_address_0> of sequential type is unconnected in block <fsm>.
+WARNING:Xst:2677 - Node <light_signals_1> of sequential type is unconnected in block <fsm>.
+WARNING:Xst:2677 - Node <light_signals_2> of sequential type is unconnected in block <fsm>.
+WARNING:Xst:2677 - Node <light_signals_3> of sequential type is unconnected in block <fsm>.
+WARNING:Xst:2677 - Node <light_signals_4> of sequential type is unconnected in block <fsm>.
+WARNING:Xst:2677 - Node <light_signals_5> of sequential type is unconnected in block <fsm>.
+WARNING:Xst:2677 - Node <light_signals_6> of sequential type is unconnected in block <fsm>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -263,8 +389,10 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Counters                                             : 3
  19-bit up counter                                     : 3
-# Registers                                            : 14
- Flip-Flops                                            : 14
+# Registers                                            : 49
+ Flip-Flops                                            : 49
+# Multiplexers                                         : 4
+ 4-bit 4-to-1 multiplexer                              : 4
 # Xors                                                 : 3
  1-bit xor2                                            : 3
 
@@ -273,60 +401,36 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <interval_address_0> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <synchronizer/reset_synchronizer/sync_0> (without init value) has a constant value of 0 in block <TrafficController>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <synchronizer/reset_synchronizer/out> (without init value) has a constant value of 0 in block <TrafficController>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <synchronizer/walkRequest_synchronizer/sync_0> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <synchronizer/walkRequest_synchronizer/out> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <synchronizer/reprogram_synchronizer/sync_0> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <synchronizer/reprogram_synchronizer/out> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <synchronizer/sensor_synchronizer/sync_0> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <synchronizer/sensor_synchronizer/out> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timer/divider_reset> of sequential type is unconnected in block <TrafficController>.
 
 Optimizing unit <TrafficController> ...
 
+Optimizing unit <TimeParameters> ...
+
+Optimizing unit <FSM> ...
+
 Optimizing unit <debouncer_core> ...
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_18> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_17> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_16> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_15> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_14> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_13> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_12> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_11> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_10> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_9> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_8> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_7> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_6> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_5> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_4> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_3> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_2> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_1> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/count_0> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/clean> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/reprogram_debouncer/new> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_18> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_17> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_16> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_15> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_14> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_13> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_12> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_11> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_10> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_9> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_8> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_7> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_6> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_5> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_4> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_3> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_2> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_1> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/count_0> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/clean> of sequential type is unconnected in block <TrafficController>.
-WARNING:Xst:2677 - Node <debouncer/walkRequest_debouncer/new> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/output_value_3> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/output_value_2> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/output_value_1> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/YELL_VALUE_3> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/YELL_VALUE_2> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/YELL_VALUE_1> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/EXTD_VALUE_3> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/EXTD_VALUE_2> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/EXTD_VALUE_1> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/BASE_VALUE_3> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/BASE_VALUE_2> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <timeParameters/BASE_VALUE_1> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <fsm/light_signals_6> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <fsm/light_signals_5> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <fsm/light_signals_4> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <fsm/light_signals_3> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <fsm/light_signals_2> of sequential type is unconnected in block <TrafficController>.
+WARNING:Xst:2677 - Node <fsm/light_signals_1> of sequential type is unconnected in block <TrafficController>.
 WARNING:Xst:2677 - Node <debouncer/reset_debouncer/count_18> of sequential type is unconnected in block <TrafficController>.
 WARNING:Xst:2677 - Node <debouncer/reset_debouncer/count_17> of sequential type is unconnected in block <TrafficController>.
 WARNING:Xst:2677 - Node <debouncer/reset_debouncer/count_16> of sequential type is unconnected in block <TrafficController>.
@@ -355,10 +459,21 @@ Found area constraint ratio of 100 (+ 5) on block TrafficController, actual rati
 
 Final Macro Processing ...
 
+Processing Unit <TrafficController> :
+	Found 2-bit shift register for signal <synchronizer/walkRequest_synchronizer/out>.
+	Found 2-bit shift register for signal <synchronizer/reprogram_synchronizer/out>.
+	Found 2-bit shift register for signal <synchronizer/sensor_synchronizer/out>.
+Unit <TrafficController> processed.
+
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 57
+ Flip-Flops                                            : 57
+# Shift Registers                                      : 3
+ 2-bit shift register                                  : 3
+
 =========================================================================
 
 =========================================================================
@@ -386,6 +501,32 @@ Design Statistics
 # IOs                              : 18
 
 Cell Usage :
+# BELS                             : 162
+#      GND                         : 1
+#      INV                         : 6
+#      LUT1                        : 36
+#      LUT2                        : 4
+#      LUT3                        : 12
+#      LUT3_L                      : 1
+#      LUT4                        : 15
+#      MUXCY                       : 46
+#      MUXF5                       : 2
+#      VCC                         : 1
+#      XORCY                       : 38
+# FlipFlops/Latches                : 60
+#      FD                          : 3
+#      FDE                         : 6
+#      FDR                         : 2
+#      FDRE                        : 47
+#      FDS                         : 1
+#      FDSE                        : 1
+# Shift Registers                  : 3
+#      SRL16                       : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 9
+#      OBUF                        : 7
 =========================================================================
 
 Device utilization summary:
@@ -393,9 +534,14 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                        0  out of   4656     0%  
+ Number of Slices:                       40  out of   4656     0%  
+ Number of Slice Flip Flops:             60  out of   9312     0%  
+ Number of 4 input LUTs:                 77  out of   9312     0%  
+    Number used as logic:                74
+    Number used as Shift registers:       3
  Number of IOs:                          18
- Number of bonded IOBs:                   0  out of    232     0%  
+ Number of bonded IOBs:                  17  out of    232     7%  
+ Number of GCLKs:                         1  out of     24     4%  
 
 ---------------------------
 Partition Resource Summary:
@@ -415,7 +561,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 63    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -425,9 +575,9 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
+   Minimum period: 5.808ns (Maximum Frequency: 172.176MHz)
+   Minimum input arrival time before clock: 4.545ns
+   Maximum output required time after clock: 4.283ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -435,16 +585,83 @@ Timing Detail:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.808ns (frequency: 172.176MHz)
+  Total number of paths / destination ports: 1257 / 158
+-------------------------------------------------------------------------
+Delay:               5.808ns (Levels of Logic = 7)
+  Source:            debouncer/walkRequest_debouncer/count_7 (FF)
+  Destination:       debouncer/walkRequest_debouncer/count_18 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: debouncer/walkRequest_debouncer/count_7 to debouncer/walkRequest_debouncer/count_18
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.591   0.622  debouncer/walkRequest_debouncer/count_7 (debouncer/walkRequest_debouncer/count_7)
+     LUT3:I0->O            1   0.704   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_lut<0> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<0> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<1> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<2> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<3> (debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           2   0.459   0.447  debouncer/walkRequest_debouncer/count_cmp_eq0000_wg_cy<4> (debouncer/walkRequest_debouncer/count_cmp_eq0000)
+     INV:I->O             19   0.704   1.085  debouncer/walkRequest_debouncer/count_not00011_INV_0 (debouncer/walkRequest_debouncer/count_not0001)
+     FDRE:CE                   0.555          debouncer/walkRequest_debouncer/count_0
+    ----------------------------------------
+    Total                      5.808ns (3.654ns logic, 2.154ns route)
+                                       (62.9% logic, 37.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 57 / 48
+-------------------------------------------------------------------------
+Offset:              4.545ns (Levels of Logic = 2)
+  Source:            walkRequest (PAD)
+  Destination:       debouncer/walkRequest_debouncer/count_18 (FF)
+  Destination Clock: clk rising
+
+  Data Path: walkRequest to debouncer/walkRequest_debouncer/count_18
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.218   0.610  walkRequest_IBUF (walkRequest_IBUF)
+     LUT2:I1->O           20   0.704   1.102  debouncer/walkRequest_debouncer/count_or00001 (debouncer/walkRequest_debouncer/count_or0000)
+     FDRE:R                    0.911          debouncer/walkRequest_debouncer/count_0
+    ----------------------------------------
+    Total                      4.545ns (2.833ns logic, 1.712ns route)
+                                       (62.3% logic, 37.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            fsm/light_signals_0 (FF)
+  Destination:       W (PAD)
+  Source Clock:      clk rising
+
+  Data Path: fsm/light_signals_0 to W
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.591   0.420  fsm/light_signals_0 (fsm/light_signals_0)
+     OBUF:I->O                 3.272          W_OBUF (W)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.12 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.10 secs
  
 --> 
 
-Total memory usage is 294400 kilobytes
+Total memory usage is 296768 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   95 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

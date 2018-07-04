@@ -42,6 +42,10 @@ module WlakRegisterTest;
 		.sys_reset(sys_reset)
 	);
 
+	initial begin 
+		forever #10 clk = ~clk;
+	end
+
 	initial begin
 		// Initialize Inputs
 		walkRequest_in = 0;
@@ -51,12 +55,8 @@ module WlakRegisterTest;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-        
-		forever #50 clk = ~clk;
-		
-	end
-	
-	initial begin
+  
+  
 		$display("Starting test of WalkRegister ...");
 
 		// clear the counter

@@ -1,15 +1,15 @@
 Command line:
    WlakRegisterTest_isim_beh.exe
      -simmode  gui
-     -simrunnum  0
-     -socket  49292
+     -simrunnum  1
+     -socket  51016
 
-Wed Jul 04 18:55:02 2018
+Wed Jul 04 19:38:39 2018
 
 
- Elaboration Time: 0.109375 sec
+ Elaboration Time: 0.078125 sec
 
- Current Memory Usage: 850.002 Meg
+ Current Memory Usage: 849.981 Meg
 
  Total Signals          : 18
  Total Nets             : 18
@@ -20,9 +20,9 @@ Wed Jul 04 18:55:02 2018
  Total Traceable Variables  : 23
  Total Scalar Nets and Variables : 103
 
- Total Simulation Time: 0.109375 sec
+ Total Simulation Time: 0.078125 sec
 
- Current Memory Usage: 850.002 Meg
+ Current Memory Usage: 692.695 Meg
 
-Wed Jul 04 18:55:23 2018
+Wed Jul 04 19:40:19 2018
 

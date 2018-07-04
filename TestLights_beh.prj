@@ -1,3 +1,3 @@
-verilog work "WalkRegister.v"
-verilog work "WlakRegisterTest.v"
+verilog work "Lights.v"
+verilog work "TestLights.v"
 verilog work "G:/Installed/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

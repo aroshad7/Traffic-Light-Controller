@@ -1,0 +1,28 @@
+Command line:
+   WalkRegister_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50428
+
+Wed Jul 04 19:23:50 2018
+
+
+ Elaboration Time: 0.078125 sec
+
+ Current Memory Usage: 850.428 Meg
+
+ Total Signals          : 17
+ Total Nets             : 18
+ Total Signal Drivers   : 6
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 8
+ Total Traceable Variables  : 19
+ Total Scalar Nets and Variables : 99
+
+ Total Simulation Time: 0.078125 sec
+
+ Current Memory Usage: 850.428 Meg
+
+Wed Jul 04 19:23:57 2018
+
