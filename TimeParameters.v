@@ -45,9 +45,9 @@ module TimeParameters(selector, reprogram_value, interval_address, prg_sync_in, 
 	begin
 		if(sys_reset)
 			begin
-				BASE_VALUE <= BASE_DEFAULT;
-				EXTD_VALUE <= EXTD_DEFAULT;
-				YELL_VALUE <= YELL_DEFAULT;
+				BASE_VALUE = BASE_DEFAULT;
+				EXTD_VALUE = EXTD_DEFAULT;
+				YELL_VALUE = YELL_DEFAULT;
 			end
 			
 		else if(prg_sync_in)
@@ -55,15 +55,15 @@ module TimeParameters(selector, reprogram_value, interval_address, prg_sync_in, 
 			
 				case(selector)
 				
-					BASE_ADD: BASE_VALUE <= (reprogram_value !== 4'd0) ? reprogram_value : BASE_DEFAULT;
-					EXTD_ADD: EXTD_VALUE <= (reprogram_value !== 4'd0) ? reprogram_value : EXTD_DEFAULT;
-					YELL_ADD: YELL_VALUE <= (reprogram_value !== 4'd0) ? reprogram_value : YELL_DEFAULT;
+					BASE_ADD: BASE_VALUE = (reprogram_value !== 4'd0) ? reprogram_value : BASE_DEFAULT;
+					EXTD_ADD: EXTD_VALUE = (reprogram_value !== 4'd0) ? reprogram_value : EXTD_DEFAULT;
+					YELL_ADD: YELL_VALUE = (reprogram_value !== 4'd0) ? reprogram_value : YELL_DEFAULT;
 					
 					default:														//Set all to default values if the selector is in an undefined state
 						begin
-							BASE_VALUE <= BASE_DEFAULT;			
-							EXTD_VALUE <= EXTD_DEFAULT;
-							YELL_VALUE <= YELL_DEFAULT;
+							BASE_VALUE = BASE_DEFAULT;			
+							EXTD_VALUE = EXTD_DEFAULT;
+							YELL_VALUE = YELL_DEFAULT;
 						end
 				endcase
 				

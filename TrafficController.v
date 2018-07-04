@@ -18,16 +18,61 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module TrafficController(reset, clk, sensor, walkRequest, reprogram, timeSelector, timeValue, Rm, Ym, Gm, Rs, Ys, Gs, W);
+module TrafficController(reset, clk, sensor, walkRequest, reprogram, extTimeSelector, extTimeValue, Rm, Ym, Gm, Rs, Ys, Gs, W);
 
 	input reset, clk, sensor, walkRequest, reprogram;
-   input [1:0] timeSelector;
-   input [3:0] timeValue;
+   input [1:0] extTimeSelector;
+   input [3:0] extTimeValue;
    output Rm, Ym, Gm, Rs, Ys, Gs, W;
 
 	reg Rm, Ym, Gm, Rs, Ys, Gs, W;
 
-	wire sys_reset, sensor_sync, WR_sync, WR, WR_reset, prog_sync, one_hz_enable, start_timer, expired;
+	wire reset_db_out, walkRequest_db_out, reprogram_db_out, sys_reset, sensor_sync, WR_sync,
+			prog_sync, WR, WR_reset, one_hz_enable, divider_reset, start_timer, expired;
 	wire[1:0] interval;
 	wire[3:0] time_value;
+	
+	Debouncer debouncer(.reset_in(reset),
+								.walkRequest_in(walkRequest),
+								.reprogram_in(reprogram),
+								.reset_db_out(reset_db_out),
+								.walkRequest_db_out(walkRequest_db_out),
+								.reprogram_db_out(reprogram_db_out),
+								.clk(clk),
+								.sys_reset(sys_reset));
+	
+	Synchronizer synchronizer(.reset_in(reset_db_out),
+										.walkRequest_in(walkRequest_db_out),
+										.reprogram_in(reprogram_db_out),
+										.sensor_in(sensor),
+										.reset_syn_out(sys_reset),
+										.walkRequest_syn_out(WR_sync),
+										.reprogram_syn_out(prog_sync),
+										.sensor_syn_out(sensor_sync),
+										.clk(clk));
+										
+	WalkRegister walkRegister(.walkRequest_in(WR_sync),
+										.walkRegister_status(WR),
+										.clk(clk),
+										.walkRegister_reset(WR_reset),
+										.sys_reset(sys_reset));
+										
+	TimeParameters timeParameters(.selector(extTimeSelector),
+											.reprogram_value(extTimeValue),
+											.interval_address(interval),
+											.prg_sync_in(prog_sync),
+											.output_value(time_value),
+											.clk(clk),
+											.sys_reset(sys_reset));
+											
+	Timer timer(.input_value(time_value),
+					.enable(one_hz_enable),
+					.start_timer(start_timer),
+					.expired(expired),
+					.divider_reset(divider_reset),
+					.clk(clk),
+					.sys_reset(sys_reset));
+					
+	Divider divider(.enable_output(one_hz_enable), .clk(clk), .devider_reset(divider_reset));
+	
 endmodule

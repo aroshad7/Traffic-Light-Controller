@@ -18,31 +18,31 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Timer(input_value, enable, start_timer, expired, devider_reset, clk, sys_reset);
+module Timer(input_value, enable, start_timer, expired, divider_reset, clk, sys_reset);
 	 
 	input[3:0] input_value;
    input enable, start_timer, clk, sys_reset;
-	output expired;
+	output expired, divider_reset;
 	
-	reg expired, devider_reset;
+	reg expired, divider_reset;
 	reg remaining_time;
 	
 	always @ (posedge clk)
 		begin
 			
 			expired <= 0;
-			devider_reset <= 0;
+			divider_reset <= 0;
 			
 			if(sys_reset)
 				begin
-					devider_reset <= 1;
+					divider_reset <= 1;
 					expired <= 0;
 					remaining_time <= 0;
 				end
 			
 			else if(start_timer)
 				begin
-					devider_reset <= 1;
+					divider_reset <= 1;
 					remaining_time <= input_value;
 				end
 				

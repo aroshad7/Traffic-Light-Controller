@@ -23,7 +23,7 @@ module WalkRegister (walkRequest_in, walkRegister_status, clk, walkRegister_rese
     
 	input clk, walkRegister_reset, walkRequest_in, sys_reset;
    output walkRegister_status;
-	reg walkRegister_status;
+	reg walkRegister_status = 0;
 
 	always @ ( posedge clk )
 		begin

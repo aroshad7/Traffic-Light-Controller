@@ -1,1 +1,6 @@
+verilog work "synchronizer_core.v"
+verilog work "debouncer_core.v"
+verilog work "WalkRegister.v"
+verilog work "Synchronizer.v"
+verilog work "Debouncer.v"
 verilog work "TrafficController.v"
