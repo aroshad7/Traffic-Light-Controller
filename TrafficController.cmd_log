@@ -11,3 +11,6 @@ trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml TrafficController.twx TrafficC
 xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
 xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
 xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 

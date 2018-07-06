@@ -46,14 +46,14 @@ module TimerTest;
 		.sys_reset(sys_reset)
 	);
 
-	initial begin
+	initial begin							//#90 delay is added for starting the clock at 100ns
 		#90
 		forever #10 clk = ~clk;
 	end
 	
-	initial begin
+	initial begin							//#100 delay is added for synchronizing the enable signal with clk signal manually
 		#100
-		forever begin
+		forever begin						//mimicking the enable singnal 
 			#60 enable = ~enable;
 			#20 enable = ~enable;
 		end

@@ -22,12 +22,12 @@ module FSM(sensor_sync_in, walkRegister_status, prg_sync_in, expired, walkRegist
 	input sensor_sync_in, walkRegister_status, prg_sync_in, expired, clk, sys_reset;
 	output walkRegister_reset, start_timer;
 	output[6:0] light_signals;
-	output[0:2] interval_address;
+	output[1:0] interval_address;
 	
 	reg walkRegister_reset, start_timer;
-	reg[6:0] light_signals;
-	reg[0:2] interval_address;
-	reg[2:0] state;
+	reg[6:0] light_signals = 7'b001_1000;
+	reg[1:0] interval_address = 2'b00;
+	reg[2:0] state = 3'd0;
 	
 	parameter START_MAIN_GREEN = 0;
 	parameter CONT_MAIN_GREEN_NO_TRAFFIC = 1;
@@ -45,12 +45,12 @@ module FSM(sensor_sync_in, walkRegister_status, prg_sync_in, expired, walkRegist
 	always @ ( posedge clk )
 	begin
 	
-		start_timer <= 0;						//Check what to use ---- <= or = 
-		walkRegister_reset <= 0;
+		start_timer = 0;						//Check what to use ---- <= or = 
+		walkRegister_reset = 0;
 
 		if ( sys_reset || prg_sync_in )
 			begin
-			start_timer <= 1;
+			start_timer = 1;
 			interval_address <= BASE_ADD ;
 			state <= START_MAIN_GREEN ;
 			end
@@ -83,11 +83,12 @@ module FSM(sensor_sync_in, walkRegister_status, prg_sync_in, expired, walkRegist
 		else
 			begin
 			
-			start_timer <= 1;
+			start_timer = 1;
 
 			case ( state )
 				START_MAIN_GREEN :
 					begin
+						$display ("ok?");
 						if ( sensor_sync_in )
 							begin
 								interval_address <= EXT_ADD ;
@@ -95,6 +96,7 @@ module FSM(sensor_sync_in, walkRegister_status, prg_sync_in, expired, walkRegist
 							end
 						else
 							begin
+								$display ("ok ok");
 								interval_address <= BASE_ADD ;
 								state <= CONT_MAIN_GREEN_NO_TRAFFIC ;
 							end
@@ -124,7 +126,7 @@ module FSM(sensor_sync_in, walkRegister_status, prg_sync_in, expired, walkRegist
 					begin
 						interval_address <= BASE_ADD ;
 						state <= START_SIDE_GREEN ;
-						walkRegister_reset <= 1;
+						walkRegister_reset = 1;
 					end
 
 				START_SIDE_GREEN :

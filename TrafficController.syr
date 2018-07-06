@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: TrafficController.prj
 
@@ -233,6 +233,8 @@ Analyzing module <FSM> in library <work>.
 	START_MAIN_GREEN = 32'sb00000000000000000000000000000000
 	START_SIDE_GREEN = 32'sb00000000000000000000000000000101
 	YEL_ADD = 2'b10
+"FSM.v" line 91: $display : ok?
+"FSM.v" line 99: $display : ok ok
 Module <FSM> is correct for synthesis.
  
 
@@ -296,11 +298,11 @@ Synthesizing Unit <FSM>.
     Related source file is "FSM.v".
     Found 7-bit register for signal <light_signals>.
     Found 1-bit register for signal <start_timer>.
-    Found 3-bit register for signal <interval_address>.
+    Found 2-bit register for signal <interval_address>.
     Found 1-bit register for signal <walkRegister_reset>.
     Found 3-bit register for signal <state>.
     Summary:
-	inferred  15 D-type flip-flop(s).
+	inferred  14 D-type flip-flop(s).
 Unit <FSM> synthesized.
 
 
@@ -352,7 +354,8 @@ Macro Statistics
  4-bit down counter                                    : 1
 # Registers                                            : 27
  1-bit register                                        : 20
- 3-bit register                                        : 2
+ 2-bit register                                        : 1
+ 3-bit register                                        : 1
  4-bit register                                        : 4
  7-bit register                                        : 1
 # Multiplexers                                         : 4
@@ -370,7 +373,6 @@ WARNING:Xst:1290 - Hierarchical block <reset_debouncer> is unconnected in block 
    It will be removed from the design.
 WARNING:Xst:1710 - FF/Latch <sync_0> (without init value) has a constant value of 0 in block <reset_synchronizer>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out> (without init value) has a constant value of 0 in block <reset_synchronizer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <interval_address_0> of sequential type is unconnected in block <fsm>.
 WARNING:Xst:2677 - Node <light_signals_1> of sequential type is unconnected in block <fsm>.
 WARNING:Xst:2677 - Node <light_signals_2> of sequential type is unconnected in block <fsm>.
 WARNING:Xst:2677 - Node <light_signals_3> of sequential type is unconnected in block <fsm>.
@@ -386,8 +388,8 @@ Macro Statistics
  19-bit up counter                                     : 3
  25-bit up counter                                     : 1
  4-bit down counter                                    : 1
-# Registers                                            : 49
- Flip-Flops                                            : 49
+# Registers                                            : 48
+ Flip-Flops                                            : 48
 # Multiplexers                                         : 4
  4-bit 4-to-1 multiplexer                              : 4
 # Xors                                                 : 3
@@ -398,7 +400,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <interval_address_0> (without init value) has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <synchronizer/reset_synchronizer/sync_0> (without init value) has a constant value of 0 in block <TrafficController>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <synchronizer/reset_synchronizer/out> (without init value) has a constant value of 0 in block <TrafficController>. This FF/Latch will be trimmed during the optimization process.
 
@@ -641,13 +642,13 @@ Offset:              4.283ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.53 secs
+Total CPU time to Xst completion: 5.89 secs
  
 --> 
 
-Total memory usage is 297792 kilobytes
+Total memory usage is 297344 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   48 (   0 filtered)
+Number of warnings :   45 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

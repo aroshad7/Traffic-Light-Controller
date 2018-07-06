@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TimerTest_isim_beh.exe" -prj "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TimerTest_beh.prj" "work.TimerTest" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/FSMTest_isim_beh.exe" -prj "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/FSMTest_beh.prj" "work.FSMTest" "work.glbl" 
