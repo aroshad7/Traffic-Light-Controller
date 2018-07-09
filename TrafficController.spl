@@ -1,0 +1,20 @@
+[Inputs]
+reset
+clk
+sensor
+walkRequest
+reprogram
+=extTimeSelector[1:0]=
+=extTimeValue[3:0]=
+[Outputs]
+Rm
+Ym
+Gm
+Rs
+Ys
+Gs
+W
+[BiDir]
+[ATTRIBUTES]
+VeriModel TrafficController
+

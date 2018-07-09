@@ -1,1 +1,2 @@
+verilog work "debouncer_core.v"
 verilog work "Debouncer.v"

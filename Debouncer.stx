@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/xst
 
@@ -17,7 +17,9 @@ Total CPU time to Xst completion: 0.11 secs
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
+Compiling verilog file "debouncer_core.v" in library work
 Compiling verilog file "Debouncer.v" in library work
+Module <debouncer_core> compiled
 Module <Debouncer> compiled
 No errors in compilation
 Analysis of file <"Debouncer.prj"> succeeded.
@@ -25,11 +27,11 @@ Analysis of file <"Debouncer.prj"> succeeded.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> 
 
-Total memory usage is 266076 kilobytes
+Total memory usage is 266012 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

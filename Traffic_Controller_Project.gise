@@ -28,9 +28,13 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Debouncer.ngc"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Debouncer.ngr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Debouncer.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="Debouncer.spl"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Debouncer.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Debouncer.sym" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Debouncer.syr"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="Debouncer.tfi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Debouncer.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="DebouncerTest_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Debouncer_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Debouncer_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Devider.prj"/>
@@ -44,10 +48,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FSM.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="FSM.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="FSM.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FSMTest_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="FSMTest_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="FSMTest_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FSMTest_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="FSM_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Lights.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Lights.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Lights.xst"/>
@@ -93,7 +96,9 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TimeParametersTest_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TimeParametersTest_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Timer.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="Timer.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Timer.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Timer.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Timer.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TimerTest_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TrafficControl.prj"/>
@@ -111,7 +116,9 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="TrafficController.pcf" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TrafficController.prj"/>
     <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="TrafficController.ptwx"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="TrafficController.spl"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="TrafficController.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="TrafficController.sym" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="TrafficController.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="TrafficController.twr" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="TrafficController.twx" xil_pn:subbranch="Par"/>
@@ -146,10 +153,9 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="debouncer_core_test_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="debouncer_core_test_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
@@ -157,14 +163,19 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1530729761" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1530729761">
+    <transform xil_pn:end_ts="1530968232" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1530968232">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1530730728" xil_pn:in_ck="-4350093690491706712" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1530730728">
+    <transform xil_pn:end_ts="1530968637" xil_pn:in_ck="-6516992846069124731" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1530968637">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Debouncer.v"/>
+      <outfile xil_pn:name="DebouncerTest.v"/>
       <outfile xil_pn:name="Divider.v"/>
       <outfile xil_pn:name="DividerTest.v"/>
       <outfile xil_pn:name="FSM.v"/>
@@ -181,24 +192,31 @@
       <outfile xil_pn:name="WalkRegister.v"/>
       <outfile xil_pn:name="WlakRegisterTest.v"/>
       <outfile xil_pn:name="debouncer_core.v"/>
+      <outfile xil_pn:name="debouncer_core_test.v"/>
       <outfile xil_pn:name="synchronizer_core.v"/>
     </transform>
-    <transform xil_pn:end_ts="1530772373" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-4453010046501195107" xil_pn:start_ts="1530772373">
+    <transform xil_pn:end_ts="1530968346" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7315553775193160882" xil_pn:start_ts="1530968346">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1530772373" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-88447725333114849" xil_pn:start_ts="1530772373">
+    <transform xil_pn:end_ts="1530968346" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5739813877382393072" xil_pn:start_ts="1530968346">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1530729761" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="7577570063459604130" xil_pn:start_ts="1530729761">
+    <transform xil_pn:end_ts="1530968232" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="7577570063459604130" xil_pn:start_ts="1530968232">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1530730728" xil_pn:in_ck="-4350093690491706712" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1530730728">
+    <transform xil_pn:end_ts="1530968637" xil_pn:in_ck="-6516992846069124731" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1530968637">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Debouncer.v"/>
+      <outfile xil_pn:name="DebouncerTest.v"/>
       <outfile xil_pn:name="Divider.v"/>
       <outfile xil_pn:name="DividerTest.v"/>
       <outfile xil_pn:name="FSM.v"/>
@@ -215,28 +233,24 @@
       <outfile xil_pn:name="WalkRegister.v"/>
       <outfile xil_pn:name="WlakRegisterTest.v"/>
       <outfile xil_pn:name="debouncer_core.v"/>
+      <outfile xil_pn:name="debouncer_core_test.v"/>
       <outfile xil_pn:name="synchronizer_core.v"/>
     </transform>
-    <transform xil_pn:end_ts="1530772376" xil_pn:in_ck="-4350093690491706712" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2658921119920218853" xil_pn:start_ts="1530772373">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1530968639" xil_pn:in_ck="-6516992846069124731" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6442302741849621667" xil_pn:start_ts="1530968637">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="FSMTest_beh.prj"/>
-      <outfile xil_pn:name="FSMTest_isim_beh.exe"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1530772377" xil_pn:in_ck="-5412508248819264007" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6003853180101560066" xil_pn:start_ts="1530772376">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1530968272" xil_pn:in_ck="-1525661524532479263" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7216735284147643154" xil_pn:start_ts="1530968271">
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="FSMTest_isim_beh.wdb"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForced"/>
+      <outfile xil_pn:name="debouncer_core_test_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1530728204" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1530728204">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -266,12 +280,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1530730972" xil_pn:in_ck="-989274110026423527" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="1226335511387428469" xil_pn:start_ts="1530730963">
+    <transform xil_pn:end_ts="1530960913" xil_pn:in_ck="-989274110026423527" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="1226335511387428469" xil_pn:start_ts="1530960894">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="Debouncer.ngr"/>
       <outfile xil_pn:name="Synchronizer.ngr"/>

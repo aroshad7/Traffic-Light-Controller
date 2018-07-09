@@ -1,0 +1,2 @@
+vhdtdtfi -lib work C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Timer.v -lang verilog -prj Traffic_Controller_Project -o Timer.spl -module Timer -template G:/Installed/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Timer.spl C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Timer.sym 

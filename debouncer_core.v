@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module debouncer_core (reset, clk, noisy, clean);
 
-   parameter DELAY = 270000;
+   parameter DELAY = 500000;
    input reset, clk, noisy;
    output clean;
 

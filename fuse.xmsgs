@@ -5,5 +5,17 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="1575" delta="unknown" >"C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Debouncer.v" Line 27: Instantiation is not allowed in sequential area except checker instantiation
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1575" delta="unknown" >"C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Debouncer.v" Line 28: Instantiation is not allowed in sequential area except checker instantiation
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1575" delta="unknown" >"C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/Debouncer.v" Line 29: Instantiation is not allowed in sequential area except checker instantiation
+</msg>
+
+<msg type="error" file="Simulator" num="778" delta="unknown" >Static elaboration of top level Verilog design unit(s) in library <arg fmt="%s" index="1">work</arg> failed
+</msg>
+
 </messages>
 

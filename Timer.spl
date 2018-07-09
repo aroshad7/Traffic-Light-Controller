@@ -1,0 +1,13 @@
+[Inputs]
+enable
+start_timer
+clk
+sys_reset
+=input_value[3:0]=
+[Outputs]
+expired
+divider_reset
+[BiDir]
+[ATTRIBUTES]
+VeriModel Timer
+

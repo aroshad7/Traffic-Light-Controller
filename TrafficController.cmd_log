@@ -14,3 +14,8 @@ xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/T
 xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
 xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
 xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.xst" -ofn "C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.syr" 
+vhdtdtfi -lib work C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.v -lang verilog -prj Traffic_Controller_Project -o TrafficController.spl -module TrafficController -template G:/Installed/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e TrafficController.spl C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.sym 
+vhdtdtfi -lib work C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.v -lang verilog -prj Traffic_Controller_Project -o TrafficController.spl -module TrafficController -template G:/Installed/Xilinx/14.7/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e TrafficController.spl C:/Users/Arosha/Desktop/HDL/Traffic_Controller_Project/TrafficController.sym 

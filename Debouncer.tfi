@@ -1,0 +1,16 @@
+
+
+
+// Instantiate the module
+Debouncer instance_name (
+    .reset_in(reset_in), 
+    .walkRequest_in(walkRequest_in), 
+    .reprogram_in(reprogram_in), 
+    .reset_db_out(reset_db_out), 
+    .walkRequest_db_out(walkRequest_db_out), 
+    .reprogram_db_out(reprogram_db_out), 
+    .clk(clk), 
+    .sys_reset(sys_reset)
+    );
+
+

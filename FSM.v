@@ -88,15 +88,15 @@ module FSM(sensor_sync_in, walkRegister_status, prg_sync_in, expired, walkRegist
 			case ( state )
 				START_MAIN_GREEN :
 					begin
-						$display ("ok?");
+						$display ("In street main green");
 						if ( sensor_sync_in )
 							begin
+								$display ("street main green - sensor in");
 								interval_address <= EXT_ADD ;
 								state <= CONT_MAIN_GREEN_TRAFFIC ;
 							end
 						else
 							begin
-								$display ("ok ok");
 								interval_address <= BASE_ADD ;
 								state <= CONT_MAIN_GREEN_NO_TRAFFIC ;
 							end
@@ -110,8 +110,10 @@ module FSM(sensor_sync_in, walkRegister_status, prg_sync_in, expired, walkRegist
 
 				MAIN_YELLOW :
 					begin
+						$display ("In main yellow");
 						if ( walkRegister_status )
 							begin
+								$display ("walk button pressed!");
 								interval_address <= EXT_ADD ;
 								state <= PEDESTRIAN_WALK ;
 							end
@@ -124,6 +126,7 @@ module FSM(sensor_sync_in, walkRegister_status, prg_sync_in, expired, walkRegist
 
 				PEDESTRIAN_WALK :
 					begin
+						$display ("In pedestrian walk");
 						interval_address <= BASE_ADD ;
 						state <= START_SIDE_GREEN ;
 						walkRegister_reset = 1;

@@ -1,0 +1,14 @@
+[Inputs]
+reset_in
+walkRequest_in
+reprogram_in
+clk
+sys_reset
+[Outputs]
+reset_db_out
+walkRequest_db_out
+reprogram_db_out
+[BiDir]
+[ATTRIBUTES]
+VeriModel Debouncer
+

@@ -66,13 +66,16 @@ module FSMTest;
 		sys_reset = 0;
 
 		// Wait 100 ns for global reset to finish
-		#100;
+		#90;
         
 		// Add stimulus here
 		sys_reset = 1;
+		walkRegister_status = 1;
+		
 		#20
 		sys_reset = 0;
-		#130
+		
+		#120
 		expired = 1;
 		
 		#20
@@ -90,7 +93,7 @@ module FSMTest;
 		#20
 		expired = 0;
 		
-		#120
+		#60
 		expired = 1;
 		
 		#20
@@ -101,8 +104,17 @@ module FSMTest;
 		
 		#20
 		expired = 0;
+		
+		#20
+		sensor_sync_in = 1;
 
-		#120
+		#100
+		expired = 1;
+		
+		#20
+		expired = 0;
+		
+		#60
 		expired = 1;
 		
 		#20
@@ -113,6 +125,7 @@ module FSMTest;
 		
 		#20
 		expired = 0;
+		
 	end
       
 endmodule
